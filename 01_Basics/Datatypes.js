@@ -3,7 +3,7 @@
 // alert(3 + 3); //We are using node js so it not supportes in node js it is upported in browser
 
 
-let name = "Sagar"
+let fName = "Sagar"
 let age = 18
 let isVoter = true
 
@@ -23,3 +23,6 @@ Primitive Data Types
 
 
 console.log(typeof null)
+console.log(typeof undefined)
+console.log(typeof fName66)
+console.log(typeof age)
