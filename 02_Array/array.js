@@ -39,6 +39,9 @@ console.log(myn2);
 console.log(mixArray)
 
 /*
-    - Slice operations excludes the rang while keeping original array as it it
-    - Splice
+    - slice excludes the end index 
+    - slice creates a new array
+
+    - splice includes the end index
+    - splice modifies the original array
 */
