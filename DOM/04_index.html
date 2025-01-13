@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM with Sagar</title>
+</head>
+<body style="background-color: black;color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(languageName) {
+            const li = document.createElement('li');
+            li.innerHTML = `${languageName}`
+            document.querySelector(`.language`).appendChild(li);
+    }
+    addLanguage("Python");
+    addLanguage("Java");
+
+    //optimized way
+    function addOptiLanguage(languageName) {
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(languageName));
+            document.querySelector(`.language`).appendChild(li);
+    }
+    addOptiLanguage("C++");
+    addOptiLanguage("Go");
+
+    //edit
+    const sndLanguage = document.querySelector('.language li:nth-child(3)')
+    // sndLanguage.innerHTML = "Mojo";
+    const newLi = document.createElement('li')
+    newLi.textContent = "Java";
+    sndLanguage.replaceWith(newLi);
+
+    const fstLanguage = document.querySelector('.language li:nth-child(2)')
+    fstLanguage.outerHTML = '<li>TypeScript</li>'
+
+    //remove
+    const lastLanguage = document.querySelector('.language li:last-child')
+    // lastLanguage.remove()
+
+
+</script>
+</html>
