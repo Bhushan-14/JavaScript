@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome Sagar</h1>
+    <button id='stop'>Stop</button>
+    <button id='start'>Start</button>
+</body>
+<script>
+    let intervalid; // Declare the variable outside to use it across functions
+
+    const sayDate = function(str) {
+        console.log("Sagar", Date.now());
+    }
+    
+    document.querySelector('#start').addEventListener('click', function(event) {
+        if (!intervalid) { // Check to prevent multiple intervals
+            console.log("START");
+            intervalid = setInterval(sayDate, 2000, "HI");
+        }
+    });
+
+    document.querySelector('#stop').addEventListener('click', function() {
+        if (intervalid) { // Check if the interval is running
+            clearInterval(intervalid);
+            intervalid = null; // Reset to prevent repeated clears
+            console.log('STOPPED');
+        }
+    });
+</script>
+</html>
