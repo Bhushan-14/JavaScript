@@ -25,6 +25,8 @@
                 - Real-time applications (e.g., chat apps, live updates)
                 - High-concurrency systems
                 - User interface applications to maintain responsiveness
+            
+
 
     - Conclusion:
         - **Blocking Code** is best for straightforward, sequential tasks or critical operations where order is crucial.

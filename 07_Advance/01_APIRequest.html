@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Info</title>
+    <style>
+        .card {
+            width: 300px;
+            border: 1px solid #e7e7e7;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .card h2 {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .card p {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div id="user-card" class="card">
+</div>
+
+<script>
+    const requestURL = 'https://api.github.com/users/Bhushan-14';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestURL, true); 
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const userData = JSON.parse(this.responseText);
+
+            const card = document.getElementById('user-card');
+            card.innerHTML = `
+                <img src="${userData.avatar_url}" alt="User Photo">
+                <h2>${userData.login}</h2>
+                <p>Followers: ${userData.followers}</p>
+                <p>Following: ${userData.following}</p>
+            `;
+        }
+    }
+
+    xhr.send();
+</script>
+
+</body>
+</html>
